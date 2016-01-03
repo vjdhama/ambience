@@ -2,8 +2,6 @@
 
 App configuration using `ENV` for [Crystal](http://crystal-lang.org/) applications inspired by [figaro](https://github.com/laserlemon/figaro).
 
-It's written in the Crystal language. It's in an early stage.
-
 ## Installation
 
 
@@ -34,4 +32,4 @@ require "ambience"
 
 ## Contributors
 
-- [vjdhama](https://github.com/vjdhama) vjdhama - creator, maintainer
+- [vjdhama](https://github.com/vjdhama) - Vijay Dhama : creator, maintainer
