@@ -1,7 +1,7 @@
 require "./spec_helper"
 
-describe Ambience do
+Spec2.describe Ambience do
   it "should not have empty version number" do
-    Ambience::VERSION.should_not eq("")
+    expect(Ambience::VERSION).not_to eq("")
   end
 end
