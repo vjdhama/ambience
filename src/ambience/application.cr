@@ -11,7 +11,7 @@ module Ambience
     end
 
     def load
-      raise Ambience::InvalidPathException.new unless File.exists?(path)
+      raise Ambience::InvalidPathException.new unless File.exists?(@path)
     end
   end
 end
