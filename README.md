@@ -1,5 +1,5 @@
 # ambience
-[https://travis-ci.org/vjdhama/ambience.svg?branch=master]
+[![Build Status](https://travis-ci.org/vjdhama/ambience.svg?branch=master)](https://travis-ci.org/vjdhama/ambience)
 
 App configuration using `ENV` for [Crystal](http://crystal-lang.org/) applications inspired by [figaro](https://github.com/laserlemon/figaro).
 
