@@ -1,13 +1,11 @@
 module Ambience
   class Application
-
-    getter path
+    
     getter environment
 
-    DEFAULT_PATH = "config/application.yml"
     DEFAULT_ENVIRONMENT = "development"
 
-    def initialize(@environment=DEFAULT_ENVIRONMENT, @path=DEFAULT_PATH)
+    def initialize(@path, @environment=DEFAULT_ENVIRONMENT)
     end
 
     def load
