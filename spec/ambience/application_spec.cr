@@ -1,5 +1,5 @@
 require "../spec_helper"
-
+require "tempfile"
 create_mock File do
   mock self.exists?(path)
 end
@@ -15,6 +15,13 @@ Spec2.describe Ambience::Application do
   end
 
   Spec2.describe "#load" do
+    def yaml_to_path(yaml)
+      tempfile = Tempfile.open(yaml) do |file|
+        file.print(yaml)
+      end
+      tempfile.path
+    end
+
     it "should raise error if path is not valid" do
       path = "wrong/path.yml"
       allow(File).to receive(self.exists?(path)).and_return(false)
@@ -27,6 +34,14 @@ Spec2.describe Ambience::Application do
       allow(File).to receive(self.exists?(path)).and_return(true)
       application = Ambience::Application.new(path, "development")
       expect{application.load}.not_to raise_error Ambience::InvalidPathException
+    end
+
+    it "should load configuration from file" do
+      yaml = "foo: bar"
+      tempfile_path = yaml_to_path(yaml)
+      allow(File).to receive(self.exists?(tempfile_path)).and_return(true)
+      application = Ambience::Application.new(tempfile_path, "development")
+      expect(application.load).to eq({"foo" => "bar"})
     end
   end
 end
