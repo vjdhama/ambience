@@ -43,5 +43,13 @@ Spec2.describe Ambience::Application do
       application = Ambience::Application.new(tempfile_path, "development")
       expect(application.load).to eq({"foo" => "bar"})
     end
+
+    it "should  not load configuration from improper formated file" do
+      yaml = "foo\nbar: war"
+      tempfile_path = yaml_to_path(yaml)
+      allow(File).to receive(self.exists?(tempfile_path)).and_return(true)
+      application = Ambience::Application.new(tempfile_path, "development")
+      expect{application.load}.to raise_error YAML::ParseException
+    end
   end
 end
