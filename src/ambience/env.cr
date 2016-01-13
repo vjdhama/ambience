@@ -1,12 +1,11 @@
 module Ambience
   class Env
-    def initialize(@config : Hash)
+    def initialize(@config)
     end
 
     def load
-      @config.each do |key, value|
-        ENV[key.to_s] = value if key.is_a?(String)
-      end
+      config = @config
+      config.each {|key, value| ENV[key.to_s] = value.to_s } if config.is_a?(Hash)
     end
   end
 end

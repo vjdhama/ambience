@@ -8,12 +8,13 @@ module Ambience
     DEFAULT_ENVIRONMENT = "development"
 
     def initialize(@path, @environment=DEFAULT_ENVIRONMENT)
-      @configuration = {} of String => Hash(String, String)
+      @env_hash = {} of String => String
     end
 
     def load
       raise Ambience::InvalidPathException.new unless File.exists?(@path)
       @env_hash = environment_configuration
+      Env.new(@env_hash).load
     end
 
     private def environment_configuration
