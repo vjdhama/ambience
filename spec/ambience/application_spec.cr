@@ -37,7 +37,11 @@ Spec2.describe Ambience::Application do
     end
 
     it "should load configuration from file" do
-      yaml = "foo: bar"
+      yaml = <<-YML
+      development:
+        foo: bar
+      YML
+
       tempfile_path = yaml_to_path(yaml)
       allow(File).to receive(self.exists?(tempfile_path)).and_return(true)
       application = Ambience::Application.new(tempfile_path, "development")
