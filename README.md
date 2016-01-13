@@ -4,7 +4,7 @@ App configuration using `ENV` for [Crystal](http://crystal-lang.org/) applicatio
 
 ## Status
 
-Currently ambience is under active development and unusable.
+Currently ambience is under active development.
 
 ## Installation
 
@@ -23,7 +23,11 @@ dependencies:
 
 ```crystal
 require "ambience"
+
+app = Ambience::Application.new("absolute_path_of_config_file", "environment")
+app.load
 ```
+
 
 
 ## Contributing
