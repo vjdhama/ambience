@@ -20,6 +20,8 @@ dependencies:
 
 ## Usage
 
+**Warning** : Currently ambience only considers key/value pairs nested in the
+environment. Global key/value pairs are not yet considered.
 
 ```crystal
 require "ambience"
@@ -27,7 +29,6 @@ require "ambience"
 app = Ambience::Application.new("absolute_path_of_config_file", "environment")
 app.load
 ```
-
 
 
 ## Contributing
