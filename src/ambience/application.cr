@@ -19,7 +19,13 @@ module Ambience
 
     private def environment_configuration
       configuration = raw_configuration
-      configuration = configuration[@environment] if configuration.is_a?(Hash)
+      if configuration.is_a?(Hash)
+        global_configuration = configuration.select{|key, value| value.is_a?(String)}
+        configuration = configuration[@environment]
+      end
+      if global_configuration.is_a?(Hash) && configuration.is_a?(Hash)
+        configuration.merge(global_configuration)
+      end
     end
 
     private def raw_configuration

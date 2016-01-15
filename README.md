@@ -20,8 +20,6 @@ dependencies:
 
 ## Usage
 
-**Warning** : Currently ambience only considers key/value pairs nested in the
-environment. Global key/value pairs are not yet considered.
 
 ```crystal
 require "ambience"

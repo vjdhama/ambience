@@ -22,21 +22,21 @@ Spec2.describe Ambience::Application do
       tempfile.path
     end
 
-    it "should raise error if path is not valid" do
+    it "raises error if path is not valid" do
       path = "wrong/path.yml"
       allow(File).to receive(self.exists?(path)).and_return(false)
       application = Ambience::Application.new(path, "development")
       expect{application.load}.to raise_error Ambience::InvalidPathException
     end
 
-    it "should not raise error if path is valid" do
+    it "does not raise error if path is valid" do
       path = "right/path.yml"
       allow(File).to receive(self.exists?(path)).and_return(true)
       application = Ambience::Application.new(path, "development")
       expect{application.load}.not_to raise_error Ambience::InvalidPathException
     end
 
-    it "should load configuration from file" do
+    it "loads configuration from file" do
       yaml = <<-YML
       development:
         foo: bar
@@ -48,12 +48,27 @@ Spec2.describe Ambience::Application do
       expect(application.load).to eq({"foo" => "bar"})
     end
 
-    it "should  not load configuration from improper formated file" do
-      yaml = "foo\nbar: war"
+    it "does not load configuration from improper formated file" do
+      yaml = <<-YML
+      development
+        foo: bar
+      YML
       tempfile_path = yaml_to_path(yaml)
       allow(File).to receive(self.exists?(tempfile_path)).and_return(true)
       application = Ambience::Application.new(tempfile_path, "development")
       expect{application.load}.to raise_error YAML::ParseException
+    end
+
+    it "merges global configuration with environment specific configuration" do
+      yaml = <<-YML
+      test: value
+      development:
+        foo: bar
+      YML
+      tempfile_path = yaml_to_path(yaml)
+      allow(File).to receive(self.exists?(tempfile_path)).and_return(true)
+      application = Ambience::Application.new(tempfile_path, "development")
+      expect(application.load).to eq({"foo" => "bar", "test" => "value"})
     end
   end
 end
