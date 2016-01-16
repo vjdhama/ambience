@@ -40,6 +40,12 @@ production:
   app_key: 123foobar
 ```
 
+##TODO'S
+
+- [ ] Convenience Proxy Methods.
+- [ ] Required keys convenience method.
+- [ ] Cli for Ambience.
+
 ## Contributing
 
 1. Fork it ( https://github.com/vjdhama/ambience/fork )
