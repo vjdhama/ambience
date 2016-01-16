@@ -17,17 +17,28 @@ dependencies:
     github: vjdhama/ambience
 ```
 
-
 ## Usage
-
 
 ```crystal
 require "ambience"
 
-app = Ambience::Application.new("absolute_path_of_config_file", "environment")
+app = Ambience::Application.new("absolute_path_of_configuration_file", "environment")
 app.load
 ```
+## Example
 
+Example configuration file
+
+```yaml
+api_url: example.com
+development:
+  app_id: foobar123
+  app_key: barfoo123
+
+production:
+  app_id: bar123foo
+  app_key: 123foobar
+```
 
 ## Contributing
 
