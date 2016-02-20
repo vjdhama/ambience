@@ -17,18 +17,28 @@ module Ambience
     end
 
     private def environment_configuration
-      configuration = raw_configuration.as_h
-      global_configuration = configuration.select { |key, value| value.is_a?(String) }
-      configuration = configuration[@environment]
-      if configuration.is_a?(Hash)
-        configuration.merge(global_configuration)
+      configuration = raw_configuration
+      if configuration.empty?
+        configuration
       else
-        global_configuration
+        global_configuration = configuration.select { |key, value| value.is_a?(String) }
+        configuration = configuration[@environment]
+        case configuration
+        when (Nil|String|Array(YAML::Type))
+          global_configuration
+        when Hash
+          configuration.merge(global_configuration)
+        end
       end
     end
 
     private def raw_configuration
-      YAML.parse(File.read(@path))
+      file_content = File.read(@path)
+      if file_content.empty?
+        {} of String => String
+      else
+        YAML.parse(file_content).as_h
+      end
     end
   end
 end
