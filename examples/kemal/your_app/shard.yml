@@ -1,0 +1,12 @@
+name: your_app
+version: 0.1.0
+
+dependencies:
+  kemal:
+    github: sdogruyol/kemal
+    branch: master
+
+  ambience:
+    github: vjdhama/ambience
+    branch: master
+

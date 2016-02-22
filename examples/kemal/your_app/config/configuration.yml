@@ -1,0 +1,8 @@
+api_url: example.com
+development:
+  app_id: foobar123
+  app_key: barfoo123
+
+production:
+  app_id: bar123foo
+  app_key: 123foobar

@@ -46,7 +46,8 @@ production:
 - [ ] Convenience Proxy Methods.
 - [ ] Required keys convenience method.
 - [ ] Cli for Ambience.
-- [ ] Add support for [frost](https://github.com/ysbaddaden/frost/) and [kemal](https://github.com/sdogruyol/kemal).
+- [ ] Add examples for [frost](https://github.com/ysbaddaden/frost/).
+- [X] Add examples for [kemal](https://github.com/sdogruyol/kemal).
 
 ## Contributing
 
