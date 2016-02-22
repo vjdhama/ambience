@@ -1,5 +1,5 @@
 name: ambience
-version: 0.1.0
+version: 0.3.1
 
 authors:
   - vjdhama <vjdhama26@gmail.com>
@@ -12,4 +12,4 @@ development_dependencies:
     version: ~> 0.6.0
   spec2:
     github: waterlink/spec2.cr
-    version: ~> 0.4.1
+    version: ~> 0.7.1
