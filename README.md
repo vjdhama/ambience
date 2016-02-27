@@ -23,12 +23,14 @@ dependencies:
 ```crystal
 require "ambience"
 
-app = Ambience::Application.new("absolute_path_of_configuration_file", "environment")
+app = Ambience::Application.new("configuration_file_path", "environment")
 app.load
 ```
-## Example
 
-Example configuration file
+Refer example kemal 
+[application](https://github.com/vjdhama/ambience/tree/master/examples/kemal/your_app) for more insight.
+
+## Example configuration file
 
 ```yaml
 api_url: example.com

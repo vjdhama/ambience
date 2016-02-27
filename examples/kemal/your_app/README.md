@@ -1,31 +1,13 @@
-# your_app
+# Sample kemal app with ambience
 
-TODO: Write a description here
-
-## Installation
-
-
-TODO: Write installation instructions here
-
+This app demostrates how to use ambience with kemal.
 
 ## Usage
 
+1. cd into your_app
+2. Modify  `src/your_app/your_app.cr` to give absolute path of config
+   file as first argument to `Ambience::Application.new`
+3. Run `shards install`
+4. Run `crystal build --release src/your_app.cr`
+5. Run `./your_app`
 
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[your-github-name]/your_app/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [[your-github-name]](https://github.com/[your-github-name]) [your-name-here] - creator, maintainer
