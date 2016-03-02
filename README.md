@@ -15,7 +15,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   ambience:
     github: vjdhama/ambience
-    version: ~> 0.3.5
+    version: ~> 0.3.6
 ```
 
 ## Usage

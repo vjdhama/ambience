@@ -6,10 +6,10 @@ module Ambience
   end
 
   def self.load
-    application.load
+    self.application.load
   end
 
   def self.env
-    application.env
+    self.application.env
   end
 end
