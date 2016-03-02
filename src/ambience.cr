@@ -1,15 +1,16 @@
 require "./ambience/*"
 
 module Ambience
-  def application(@path, @environment)
+  def self.application(@path, @environment)
     @application ||= Application.new(@path, @environment)
   end
 
-  def load
+  def self.load
     application.load
   end
 
-  def env
+  def self.env
     application.env
   end
 end
+
