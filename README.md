@@ -15,7 +15,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   ambience:
     github: vjdhama/ambience
-    version: ~> 0.3.4
+    version: ~> 0.3.5
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ Ambience.application("configuration_file_path", "environment")
 Ambience.load
 ```
 
-Refer example kemal 
+Refer example kemal
 [application](https://github.com/vjdhama/ambience/tree/master/examples/kemal/your_app) for more insight.
 
 ## Example configuration file
