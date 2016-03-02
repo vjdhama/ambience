@@ -3,17 +3,18 @@ require "yaml"
 module Ambience
   class Application
     getter environment
+    getter env
 
     DEFAULT_ENVIRONMENT = "development"
 
     def initialize(@path, @environment = DEFAULT_ENVIRONMENT)
-      @env_hash = {} of String => String
+      @env = {} of String => String
     end
 
     def load
       raise Ambience::InvalidPathException.new unless File.exists?(@path)
-      @env_hash = environment_configuration
-      Env.new(@env_hash).load
+      @env = environment_configuration
+      Env.new(@env).load
     end
 
     private def environment_configuration
@@ -42,4 +43,3 @@ module Ambience
     end
   end
 end
-

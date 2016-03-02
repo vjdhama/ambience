@@ -2,14 +2,14 @@ require "./ambience/*"
 
 module Ambience
   def self.application(path, environment)
-    Application.new(path, environment)
+    @@application = Application.new(path, environment)
   end
 
   def self.load
-    self.application.load
+    @@application.try &.load
   end
 
   def self.env
-    self.application.env
+    @@application.try &.env
   end
 end
