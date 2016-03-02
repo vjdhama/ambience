@@ -15,7 +15,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   ambience:
     github: vjdhama/ambience
-    version: ~> 0.3.1
+    version: ~> 0.3.3
 ```
 
 ## Usage
@@ -23,8 +23,8 @@ dependencies:
 ```crystal
 require "ambience"
 
-app = Ambience::Application.new("configuration_file_path", "environment")
-app.load
+Ambience.application("configuration_file_path", "environment")
+Ambience.load
 ```
 
 Refer example kemal 
@@ -45,7 +45,7 @@ production:
 
 ##TODO'S
 
-- [ ] Convenience Proxy Methods.
+- [x] Convenience Proxy Methods.
 - [ ] Required keys convenience method.
 - [ ] Cli for Ambience.
 - [ ] Add examples for [frost](https://github.com/ysbaddaden/frost/).
