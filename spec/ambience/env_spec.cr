@@ -6,7 +6,7 @@ Spec2.describe Ambience::Env do
       config = {"foo" => "bar"}
       env = Ambience::Env.new(config)
       env.load
-      expect{ENV["foo"]}.not_to eq(nil)
+      expect { ENV["foo"] }.not_to eq(nil)
     end
   end
 end

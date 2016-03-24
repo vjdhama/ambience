@@ -25,7 +25,7 @@ module Ambience
         global_configuration = configuration.select { |key, value| value.is_a?(String) }
         configuration = configuration[@environment]
         case configuration
-        when (Nil|String|Array(YAML::Type))
+        when (Nil | String | Array(YAML::Type))
           global_configuration
         when Hash
           configuration.merge(global_configuration)

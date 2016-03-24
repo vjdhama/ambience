@@ -5,8 +5,7 @@ module Ambience
 
     def load
       config = @config
-      config.each {|key, value| ENV[key.to_s] = value.to_s } if config.is_a?(Hash)
+      config.each { |key, value| ENV[key.to_s] = value.to_s } if config.is_a?(Hash)
     end
   end
 end
-
