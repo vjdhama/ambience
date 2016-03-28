@@ -45,6 +45,16 @@ Spec2.describe Ambience::Application do
       expect { application.load }.not_to raise_error
     end
 
+    it "does not raise error if given environment key is missing" do
+      yaml = <<-YML
+      test: value
+      YML
+      tempfile_path = yaml_to_path(yaml)
+      allow(File).to receive(self.exists?(tempfile_path)).and_return(true)
+      application = Ambience::Application.new(tempfile_path, "development")
+      expect { application.load }.not_to raise_error
+    end
+
     it "loads configuration from file" do
       yaml = <<-YML
       development:

@@ -23,7 +23,7 @@ module Ambience
         configuration
       else
         global_configuration = configuration.select { |key, value| value.is_a?(String) }
-        configuration = configuration[@environment]
+        configuration = configuration.has_key?(@environment) ? configuration[@environment] : nil
         case configuration
         when (Nil | String | Array(YAML::Type))
           global_configuration
