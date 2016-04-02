@@ -1,5 +1,5 @@
 name: ambience
-version: 0.3.8
+version: 0.3.9
 
 authors:
   - vjdhama <vjdhama26@gmail.com>
@@ -9,7 +9,11 @@ license: MIT
 development_dependencies:
   mocks:
     github: waterlink/mocks.cr
-    version: ~> 0.6.0
+    version: 0.9.1
+  spec2-mocks:
+    github: waterlink/spec2-mocks.cr
+    version: 0.3.1
   spec2:
     github: waterlink/spec2.cr
-    version: ~> 0.7.1
+    version: ~> 0.8.0
+

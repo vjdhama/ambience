@@ -1,6 +1,7 @@
 require "../spec_helper"
 require "tempfile"
-create_mock File do
+
+Mocks.create_mock File do
   mock self.exists?(path)
 end
 
