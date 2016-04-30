@@ -6,7 +6,3 @@ dependencies:
     github: sdogruyol/kemal
     branch: master
 
-  ambience:
-    github: vjdhama/ambience
-    branch: master
-
