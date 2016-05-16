@@ -2,9 +2,10 @@
 
 App configuration using `ENV` for [Crystal](http://crystal-lang.org/) applications inspired by [figaro](https://github.com/laserlemon/figaro).
 
-## Status
+## Warning
 
-Currently ambience is under active development.
+Currently ambience doesn't work with latest crystal(version 0.16.0).
+This is a know [issue](https://github.com/waterlink/mocks.cr/issues/20).
 
 ## Installation
 
